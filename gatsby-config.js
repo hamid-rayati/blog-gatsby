@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `وبلاگ برای برنامه‌نویسان`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `حمید رعیتی`,
+      summary: `او دانش آموخته رشته مهندسی عمران است ولی به دلیل علاقه بسیار زیاد به کامپیوتر و بروز این علاقه در شرکتی که به عنوان کارشناس سازه در آن مشغول به کار بود، به عنوان برنامه‌نویس شروع به همکاری در پروژه‌های جاری شرکت نمود. پس از مدت شش ماه و با پیشرفت‌های حاصله، به عنوان مدیر گروه برنامه‌نویسی انتخاب شد و این حوزه به شغل اصلی او تبدیل شد. او حدود هفت سال است که به عنوان Fullstack Developer و SysAdmin  فعالیت می‌کند. او از هر زمانی برای بررسی تکنولوژی‌های روز برنامه نویسی استفاده می‌کند و در اوقات فراغت خود درحال یادگیری آن‌ها می‌باشد.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `وبلاگ ساده برای برنامه نویسان`,
+    siteUrl: `https://codemastery.ir/`,
     social: {
       twitter: `kylemathews`,
     },

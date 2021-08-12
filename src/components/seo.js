@@ -34,6 +34,7 @@ const Seo = ({ description, lang, meta, title }) => {
     <Helmet
       htmlAttributes={{
         lang,
+        dir: "rtl",
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
@@ -76,7 +77,7 @@ const Seo = ({ description, lang, meta, title }) => {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: `fa`,
   meta: [],
   description: ``,
 }
