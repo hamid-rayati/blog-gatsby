@@ -1,15 +1,14 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import moment from "jalali-moment"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
-  console.log("here")
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -26,6 +25,8 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
+          const m = moment(post.frontmatter.date, "jYYYY/jMM/jDD HH:mm:ss") // parse a gregorian (miladi) date
+
           return (
             <li key={post.fields.slug}>
               <article
@@ -39,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{m.format("jYYYY/jMM/jDD")}</small>
                 </header>
                 <section>
                   <p
@@ -74,7 +75,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date
           title
           description
         }

@@ -8,7 +8,7 @@ module.exports = {
     description: `وبلاگ ساده برای برنامه نویسان`,
     siteUrl: `https://codemastery.ir/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `hamid_rayati`,
     },
   },
   plugins: [

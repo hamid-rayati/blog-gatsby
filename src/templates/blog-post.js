@@ -4,11 +4,13 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import moment from "jalali-moment"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+  const m = moment(post.frontmatter.date, "jYYYY/jMM/jDD HH:mm:ss")
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p>{m.format("jYYYY/jMM/jDD HH:mm:ss")}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -83,7 +85,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date
         description
       }
     }
